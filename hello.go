@@ -24,7 +24,7 @@ type Page struct {
 
 const githubProjectBaseURL = "https://api.github.com/repos/"
 
-const projectName = "halla/golang-docker-circleci-example"
+const projectName = "sikharis/godockci"
 
 // slices are popular data structures in go
 var projectNames = []string{
@@ -53,10 +53,10 @@ func FormatDate(rfc3339date string) string {
 
 // lowercase functions are internal to the package
 func hello(w http.ResponseWriter, r *http.Request) {
-	io.WriteString(w, "<h1>golang-docker-circleci-example</h1>")
+	io.WriteString(w, "<h1>golang-docker-circleci</h1>")
 
 	page := new(Page)
-	page.Title = "golang-docker-circleci-example"
+	page.Title = "golang-docker-circleci"
 	page.Body = "Body here"
 
 	// synchronous http request
