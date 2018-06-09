@@ -31,8 +31,8 @@ Build status: [![CircleCI](https://circleci.com/gh/sikharis/godockci/tree/master
 
 Assuming you have docker installed, clone this repo, cd to the project directory, build and run:
 
-##$ docker build -t hello-golang .
-##$ docker run --volume=D:\go\path\src\github.com\sikharis\godockci -p 8080:3000 --rm --name my-running-app hello-golang
+$ docker build -t hello-golang .
+$ docker run --volume=D:\go\path\src\github.com\sikharis\godockci -p 8080:3000 --rm --name my-running-app hello-golang
 
 You should see "Starting server..." in the console, and "Hello world" in your browser if you navigate to localhost:8080
 
