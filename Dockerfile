@@ -19,5 +19,5 @@ ENV PORT 8080
 
 CMD ["gin", "run"]
 
-# Gin not needed in production
+# Gin not needed in production env
 # CMD ["go-wrapper", "run"] # ["app"]
