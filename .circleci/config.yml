@@ -34,9 +34,7 @@ jobs:
               docker login -u ${DOCKER_USER} -p ${DOCKER_PASS} https://index.docker.io/v1/
               docker push ${DOCKER_REPO}
               echo "stopping running application"
-              sshpass -p$DEPLOY_PASS ssh -o StrictHostKeyChecking=no $DEPLOY_USER@$DEPLOY_HOST 'docker stop dodsv'
-              sshpass -p$DEPLOY_PASS ssh -o StrictHostKeyChecking=no $DEPLOY_USER@$DEPLOY_HOST 'docker stop dodsv'
-              sshpass -p$DEPLOY_PASS ssh -o StrictHostKeyChecking=no $DEPLOY_USER@$DEPLOY_HOST 'docker rm dodsv'
+              sshpass -p$DEPLOY_PASS ssh -o StrictHostKeyChecking=no $DEPLOY_USER@$DEPLOY_HOST 'docker stop godockci || true && docker rm godockci || true'
 
               echo "pulling latest version of the code"
               sshpass -p$DEPLOY_PASS ssh -o StrictHostKeyChecking=no $DEPLOY_USER@$DEPLOY_HOST 'docker pull sikharis/godockci:latest'
