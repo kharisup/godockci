@@ -49,8 +49,8 @@ If you modify the source code, you should see the changes when refreshing your b
 To deploy the project using the image in Docker Hub registry
 
 * install Docker on your server
-* docker pull ahalla/golang-docker-circleci-example
-* docker run -d -p 8080:3000 --rm --name golang-docker-circleci-example ahalla/golang-docker-circleci-example
+* docker pull sikharis/godockci
+* docker run -d -p 8080:3000 --rm --name golang-docker-circleci-example sikharis/godockci
 
 This will run the container as a background job, listening to the OS port 8080. The container will be removed automatically when killed.
 
@@ -61,11 +61,11 @@ To automatically update the running application, you can do something along the 
 ```bash
 #/bin/bash
 echo "Pulling the latest version from registry"
-docker pull ahalla/golang-docker-circleci-example
+docker pull sikharis/godockci
 echo "Killing the running container"
 docker kill golang-docker-circleci-example
 echo "Preparing to run.."
-docker run -d -p 8080:3000 --rm --name golang-docker-circleci-example ahalla/golang-docker-circleci-example
+docker run -d -p 8080:3000 --rm --name golang-docker-circleci-example sikharis/godockci
 ```
 
 Here we give the container a name so we can kill it later. This script can be either triggered from the CI or run

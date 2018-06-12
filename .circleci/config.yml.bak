@@ -32,5 +32,4 @@ jobs:
               docker build --tag ${DOCKER_REPO} .
               docker login -u ${DOCKER_USER} -p ${DOCKER_PASS} https://index.docker.io/v1/
               docker push ${DOCKER_REPO}
-              ssh $DEPLOY_USER@$DEPLOY_HOST 'docker pull sikharis/godockci:latest'
             fi
