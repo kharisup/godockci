@@ -41,4 +41,6 @@ jobs:
 
               echo "starting the new version"
               ssh $DEPLOY_USER@$DEPLOY_HOST 'docker run -d --restart=always --name dodsv -p 80:5432 sikharis/godockci:latest'
+              echo "success!"
+              exit 0
             fi
