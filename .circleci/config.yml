@@ -40,7 +40,7 @@ jobs:
               sshpass -p$DEPLOY_PASS ssh -o StrictHostKeyChecking=no $DEPLOY_USER@$DEPLOY_HOST 'docker pull sikharis/godockci:latest'
 
               echo "starting the new version"
-              sshpass -p$DEPLOY_PASS ssh -o StrictHostKeyChecking=no $DEPLOY_USER@$DEPLOY_HOST 'docker run -d --restart=always --name dodsv -p 80:5432 sikharis/godockci:latest'
+              sshpass -p$DEPLOY_PASS ssh -o StrictHostKeyChecking=no $DEPLOY_USER@$DEPLOY_HOST 'docker run -d --restart=always --name godockci -p 80:5432 sikharis/godockci:latest'
               echo "success!"
               exit 0
             fi
