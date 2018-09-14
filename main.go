@@ -6,6 +6,7 @@ import (
 	"html/template"
 	"io"
 	"net/http"
+	"os"
 	"time"
 )
 
@@ -36,9 +37,8 @@ var httpClient = &http.Client{Timeout: 10 * time.Second}
 
 // main is the entry point to the application by convention
 func main() {
-	// port := os.Getenv("PORT")
-	port := "3000"
-	fmt.Println("Starting a server listening at port " + port)
+	port := os.Getenv("PORT")
+	fmt.Println("Starting a server listening")
 	http.HandleFunc("/", hello)
 	http.ListenAndServe(":"+port, nil)
 }
