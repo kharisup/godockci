@@ -26,6 +26,7 @@ jobs:
       # specify any bash command here prefixed with `run: `
       - run: go get -v -t -d ./...
       - run: go test -v ./...
+      - run: sudo apt-get update && apt-get install -y --no-install-recommends apt-utils
       - run: sudo apt-get install sshpass
       - deploy:
           command: |
