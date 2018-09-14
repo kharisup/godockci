@@ -12,7 +12,7 @@ import (
 // Project type is used to extract fields from Github project json object.
 // Field names have to be uppercase (exported) for json decoder to work.
 type Project struct {
-	Name     string `json:"name"`
+	Name     string `json:"full_name"`
 	PushedAt string `json:"pushed_at"`
 }
 
