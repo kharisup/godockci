@@ -1,5 +1,5 @@
 # consider using alpine-version in production, it's a lightweight distro
-FROM golang:1.11-alpine
+FROM golang:1.9-alpine
 
 # since we're on alpine, we need to install what we need
 RUN apk add --no-cache git
@@ -16,7 +16,7 @@ RUN go-wrapper install # "go install -v ./..."
 
 # Gin assumes PORT environment var is set
 # ENV PORT 8080
-CMD ["gin", "run"]
+#CMD ["gin", "run"]
 
 # Gin not needed in production env
-# CMD ["go-wrapper", "run"] # ["app"]
+CMD ["go-wrapper", "run"] # ["app"]
