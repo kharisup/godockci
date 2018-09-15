@@ -16,7 +16,7 @@ RUN go-wrapper install # "go install -v ./..."
 
 # Gin assumes PORT environment var is set
 # ENV PORT 8080
-#CMD ["gin", "run"]
+CMD ["gin", "run"]
 
 # Gin not needed in production env
-CMD ["go-wrapper", "run"] # ["app"]
+#CMD ["go-wrapper", "run"] # ["app"]
